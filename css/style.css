@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --text-color: #0f0;
+}
+
+body {
+  font-family: 'Roboto Mono', sans-serif;
+  background-color: #000;
+  color: #ccc;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: var(--text-color);
+  font-size: 50px;
+  letter-spacing: -5px;
+  margin-bottom: 20px;
+}
+
+h2,
+span {
+  color: var(--text-color);
+}
+
+h3 {
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+a {
+  color: #0bc;
+  text-decoration: none;
+}
+
+.resume {
+  color: #0f0;
+  text-decoration: none;
+}
+
+li {
+  font-size: 115%;
+}
+
+p {
+  margin: 20px 0;
+}
+
+nav {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: black;
+  
+  
+}
+
+nav ul {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px;
+}
+
+nav ul li {
+  color: var(--text-color);
+  cursor: pointer;
+  margin: 0 10px;
+}
+.container {
+  max-width: 1000px;
+  margin: auto;
+  height: 92vh; /* Set the height of the container to 92vh (viewport height) */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden; /* Hide the vertical scrollbar */
+  
+}
+
+.profile-picture {
+  max-width: 200px; /* Adjust the maximum width of the image as needed */
+  border-radius: 50%; /* Make the image circular */
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  margin-top: 100px;
+}
+.wb-body {
+  background: #111;
+  padding: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.cursor {
+  font-weight: 700;
+  animation: 1s blink step-end infinite;
+}
+
+@keyframes blink {
+  from,
+  to {
+    color: transparent;
+  }
+
+  50% {
+    color: var(--text-color);
+  }
+}
+
+
+@keyframes scroll {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%); /* Adjust the value as needed for scrolling speed */
+  }
+}
+
+.main-content {
+  animation: scroll 30s linear forwards; /* Adjust the duration (30s) as needed */
+}
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.terminal {
+  left: 50%;
+  top: 50%;
+  text-shadow: 0px 0px 2px rgba(255, 255, 255, 0.4);
+  height: 70px;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: inherit;
+}
+
+.dollar:before {
+  content: '$';
+  color: #52a563;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small screens */
+@media screen and (max-width: 767px) {
+  h1 {
+    font-size: 36px;
+  }
+
+  nav {
+    width: 100%;
+  }
+  nav ul {
+    flex-direction: row; /* Stack the navigation items  */
+  }
+
+  nav ul li {
+    margin: 5px 0; /* Add spacing between the navigation items */
+    padding: 5px;
+    
+  }
+ 
+
+  .profile-picture {
+    max-width: 200px; /* Adjust the maximum width of the image as needed */
+    border-radius: 50%; /* Make the image circular */
+    float: right; /* Display the image at the top right corner */
+    margin: 10px; /* Add margin to adjust the spacing */
+    margin-top: 50px;
+  }
+
+  .terminal {
+    font-size: 14px;
+  }
+}
+
+/* Medium screens */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: 42px;
+  }
+  nav {
+    max-width: 1000px; /* Limit the maximum width of the navigation bar */
+    margin: 0 auto; /* Center the navigation bar horizontally */
+  }
+  
+
+  .terminal {
+    font-size: 18px;
+  }
+}
+
+/* Large screens */
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 50px;
+  }
+ 
+
+  .terminal {
+    font-size: 20px;
+  }
+ 
+
+}
+
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.tech-stack-item {
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  min-width: 150px;
+  width: 30%;
+}
+.tech-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+.tech-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+
+.folder-container {
+  margin-top: 10px;
+  padding: 10px;
+  background-color: black;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+body.disable-scroll {
+  overflow: hidden;
+}
+
+
+
+/* Add custom colors to the icons */
+.programming-languages { color: #007bff; } /* Blue */
+.web-dev { color: #28a745; } /* Green */
+.cloud-platforms { color: #ffc107; } /* Yellow */
+.containerization { color: #17a2b8; } /* Cyan */
+.orchestration { color: #6610f2; } /* Purple */
+.databases { color: #dc3545; } /* Red */
+.apis { color: #fd7e14; } /* Orange */
+.devops { color: #20c997; } /* Teal */
+.version-control { color: #6c757d; } /* Gray */
+.automation { color: #e83e8c; } /* Pink */
+.data-engineering { color: #6f42c1; } /* Indigo */
+.machine-learning { color: #fd7e14; } /* Orange */
+.cyber-security { color: #17a2b8; } /* Cyan */
+.others { color: #007bff; } /* Blue */
