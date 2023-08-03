@@ -57,47 +57,48 @@ p {
 }
 
 nav {
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
   background-color: black;
-  
-  
+
 }
 
 nav ul {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-around; /* Center the navigation items */
   align-items: center;
-  padding: 10px;
+  flex-wrap: wrap; /* Allow navigation items to wrap to a new line on small screens */
 }
 
 nav ul li {
   color: var(--text-color);
   cursor: pointer;
-  margin: 0 10px;
+  white-space: nowrap; /* Prevent navigation items from wrapping to a new line */
+  margin: 2px; /* Add some spacing between the navigation items */
+  font-size: 20px;
+  justify-content: space-around;
 }
+ 
+
 .container {
   max-width: 1000px;
   margin: auto;
-  height: 92vh; /* Set the height of the container to 92vh (viewport height) */
+  padding: 20px; /* Add padding to create space between content and screen edges */
+  height: 92vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden; /* Hide the vertical scrollbar */
-  
+  overflow: hidden;
 }
 
 .profile-picture {
-  max-width: 200px; /* Adjust the maximum width of the image as needed */
-  border-radius: 50%; /* Make the image circular */
+  max-width: 150px; /* Reduce the maximum width for small screens */
+  border-radius: 50%;
   position: absolute;
   top: 10px;
   right: 10px;
-  margin-top: 100px;
+  margin-top: 50px; /* Reduce the margin for small screens */
 }
+
 .wb-body {
   background: #111;
   padding: 20px;
@@ -165,49 +166,53 @@ footer {
 /* Small screens */
 @media screen and (max-width: 767px) {
   h1 {
-    font-size: 36px;
+    font-size: 32px; /* Reduce the font size for headings */
   }
 
-  nav {
-    width: 100%;
-  }
   nav ul {
-    flex-direction: row; /* Stack the navigation items  */
+    justify-content: space-around; /* Distribute navigation items evenly on small screens */
   }
-
   nav ul li {
-    margin: 5px 0; /* Add spacing between the navigation items */
-    padding: 5px;
-    
+    font-size: 10px; /* Further reduce the font size for smaller screens */
   }
- 
 
   .profile-picture {
-    max-width: 200px; /* Adjust the maximum width of the image as needed */
-    border-radius: 50%; /* Make the image circular */
-    float: right; /* Display the image at the top right corner */
-    margin: 10px; /* Add margin to adjust the spacing */
-    margin-top: 50px;
+    max-width: 100px; /* Reduce the maximum width of the image */
+    margin: 5px; /* Adjust the margin for smaller screens */
+    margin-top: 30px; /* Adjust the margin-top for smaller screens */
   }
 
   .terminal {
-    font-size: 14px;
+    font-size: 14px; /* Reduce the font size for the terminal text */
+  }
+  .project-card {
+    flex-direction: column;
+  }
+  .project-icon {
+    margin-right: 0;
+    margin-bottom: 10px;
   }
 }
-
 /* Medium screens */
 @media screen and (min-width: 768px) and (max-width: 1023px) {
   h1 {
     font-size: 42px;
   }
-  nav {
-    max-width: 1000px; /* Limit the maximum width of the navigation bar */
-    margin: 0 auto; /* Center the navigation bar horizontally */
+
+  nav ul {
+    justify-content: space-around; /* Distribute navigation items evenly on small screens */
   }
-  
+  nav ul li {
+    font-size: 18px; /* Further reduce the font size for smaller screens */
+  }
+  .profile-picture {
+    max-width: 100px; /* Reduce the maximum width of the image */
+    margin: 5px; /* Adjust the margin for smaller screens */
+    margin-top: 30px; /* Adjust the margin-top for smaller screens */
+  }
 
   .terminal {
-    font-size: 18px;
+    font-size: 14px; /* Reduce the font size for the terminal text */
   }
 }
 
@@ -265,7 +270,40 @@ body.disable-scroll {
   overflow: hidden;
 }
 
-
+.project-card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  display: flex;
+  margin: 10px;
+  align-items: center;
+  width: 100%;
+}
+.project-icon {
+  background-color: #007BFF;
+  color: #fff;
+  padding: 15px;
+  border-radius: 50%;
+  font-size: 30px;
+  margin-right: 20px;
+}
+.project-details {
+  flex: 1;
+  width: 100%;
+}
+.project-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+.project-description {
+  font-size: 16px;
+  color: #333;
+  width: 100%;
+}
+.project-link {
+  color: #007BFF;
+  text-decoration: none;
+}
 
 /* Add custom colors to the icons */
 .programming-languages { color: #007bff; } /* Blue */
